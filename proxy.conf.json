@@ -1,0 +1,14 @@
+{
+    "/api/*": {
+        "target": "http://192.168.1.51:3000",
+        "rewriteUrl" : { "^/api" : "" },
+        "secure": false,
+        "logLevel": "debug"
+    },
+    "/upload/*": {
+        "target": "http://127.0.0.1:8000",
+        "rewriteUrl" : { "^/upload" : "" },
+        "secure": false,
+        "logLevel": "debug"
+    }
+} 

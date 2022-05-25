@@ -1,0 +1,64 @@
+<section id="container-login">
+    <div class="container py-5 ">
+        <div class="row align-items">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                    class="img-fluid" alt="Phone image">
+                </div>
+                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1" *ngIf="changePage == true">
+                    <form class="formLogin" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                        <div class="form-outline mb-4">
+                            <label for="username" class="form-label label-login">ชื่อผู้ใช้</label>
+                            <input type="text" formControlName="username" class="form-control form-control-lg input-login">
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label for="password" class="form-label label-login">รหัสผ่าน</label>
+                            <input type="password" formControlName="password"
+                            class="form-control form-control-lg input-login">
+                        </div>
+                        <button class="btn btn-info float-right" type="submit">LOGIN</button>
+                    </form>
+                    <a class=" text-center d-block mx-auto mt-4" type="button" (click)="onChangePage()">sign in</a>
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1" *ngIf="changePage == false">
+                <form class="formLogin" [formGroup]="registerForm" (ngSubmit)="onSubmitRegisterAdmin()">
+                    <div class="form-outline mb-4">
+                        <label for="display_name" class="form-label label-login">ชื่อ</label>
+                        <input type="text" id="display_name" formControlName="display_name"
+                            class="form-control form-control-lg input-login" required>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label for="username" class="form-label label-login">ไอดี</label>
+                        <input type="text" id="username" formControlName="username"
+                            class="form-control form-control-lg input-login" required>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label for="email" class="form-label label-login">อีเมล</label>
+                        <input type="email" id="email" formControlName="email"
+                            class="form-control form-control-lg input-login" placeholder="example@simddee.com" required>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label for="password" class="form-label label-login">รหัสผ่าน</label>
+                        <input type="password" id="password" formControlName="password"
+                            class="form-control form-control-lg input-login" placeholder="***********" required>
+                    </div>
+                    <!-- <div class="form-outline mb-4">
+                        <label for="cfpassword" class="form-label label-login">ยืนยันรหัสผ่าน</label>
+                        <input type="cfpassword" id="cfpassword" formControlName="cfpassword" class="form-control form-control-lg input-login"
+                            placeholder="***********" required>
+                    </div> -->
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-secondary d-block mx-auto" type="submit" type="button"
+                                (click)="onChangePage()">Back to login</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-info d-block mx-auto" type="submit">Register</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
